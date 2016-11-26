@@ -1,4 +1,5 @@
 ActiveAdmin.register Top do
+  permit_params :top1, :desc1, :top2, :desc2, :top3, :desc3, :top4, :desc4, :top5, :desc5, :ispublic, :iscategory, :sources
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
