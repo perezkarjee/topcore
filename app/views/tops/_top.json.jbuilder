@@ -1,0 +1,2 @@
+json.extract! top, :id, :top1, :desc1, :top2, :desc2, :top3, :desc3, :top4, :desc4, :top5, :desc5, :ispublic, :iscategory, :user_id, :sources, :created_at, :updated_at
+json.url top_url(top, format: :json)
