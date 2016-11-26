@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
   resources :tops do
   #->Prelang (voting/acts_as_votable)
   member do
