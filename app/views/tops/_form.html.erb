@@ -1,24 +1,88 @@
-<%= simple_form_for(@top) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :top1 %>
-    <%= f.input :desc1 %>
-    <%= f.input :top2 %>
-    <%= f.input :desc2 %>
-    <%= f.input :top3 %>
-    <%= f.input :desc3 %>
-    <%= f.input :top4 %>
-    <%= f.input :desc4 %>
-    <%= f.input :top5 %>
-    <%= f.input :desc5 %>
-    <%= f.input :ispublic %>
-    <%= f.input :iscategory %>
-    <%= f.association :user %>
-    <%= f.input :sources %>
+<%= form_for @top, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :top1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :top1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :desc1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :top2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :top2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :desc2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :top3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :top3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :desc3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :top4, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :top4, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc4, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :desc4, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :top5, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :top5, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc5, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :desc5, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ispublic, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :ispublic, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :iscategory, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :iscategory, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sources, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :sources, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tops_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

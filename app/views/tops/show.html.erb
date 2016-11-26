@@ -1,74 +1,48 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Top -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Top %></h1>
+</div>
 
-<p>
-  <strong>Top1:</strong>
-  <%= @top.top1 %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:top1) %></dt>
+      <dd><pre class="prettyprint"><%= @top.top1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:desc1) %></dt>
+      <dd><pre class="prettyprint"><%= @top.desc1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:top2) %></dt>
+      <dd><pre class="prettyprint"><%= @top.top2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:desc2) %></dt>
+      <dd><pre class="prettyprint"><%= @top.desc2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:top3) %></dt>
+      <dd><pre class="prettyprint"><%= @top.top3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:desc3) %></dt>
+      <dd><pre class="prettyprint"><%= @top.desc3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:top4) %></dt>
+      <dd><pre class="prettyprint"><%= @top.top4 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:desc4) %></dt>
+      <dd><pre class="prettyprint"><%= @top.desc4 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:top5) %></dt>
+      <dd><pre class="prettyprint"><%= @top.top5 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:desc5) %></dt>
+      <dd><pre class="prettyprint"><%= @top.desc5 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ispublic) %></dt>
+      <dd><pre class="prettyprint"><%= @top.ispublic %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:iscategory) %></dt>
+      <dd><pre class="prettyprint"><%= @top.iscategory %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sources) %></dt>
+      <dd><pre class="prettyprint"><%= @top.sources %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Desc1:</strong>
-  <%= @top.desc1 %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tops_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_top_path(@top), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              top_path(@top),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Top2:</strong>
-  <%= @top.top2 %>
-</p>
-
-<p>
-  <strong>Desc2:</strong>
-  <%= @top.desc2 %>
-</p>
-
-<p>
-  <strong>Top3:</strong>
-  <%= @top.top3 %>
-</p>
-
-<p>
-  <strong>Desc3:</strong>
-  <%= @top.desc3 %>
-</p>
-
-<p>
-  <strong>Top4:</strong>
-  <%= @top.top4 %>
-</p>
-
-<p>
-  <strong>Desc4:</strong>
-  <%= @top.desc4 %>
-</p>
-
-<p>
-  <strong>Top5:</strong>
-  <%= @top.top5 %>
-</p>
-
-<p>
-  <strong>Desc5:</strong>
-  <%= @top.desc5 %>
-</p>
-
-<p>
-  <strong>Ispublic:</strong>
-  <%= @top.ispublic %>
-</p>
-
-<p>
-  <strong>Iscategory:</strong>
-  <%= @top.iscategory %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @top.user %>
-</p>
-
-<p>
-  <strong>Sources:</strong>
-  <%= @top.sources %>
-</p>
-
-<%= link_to 'Edit', edit_top_path(@top) %> |
-<%= link_to 'Back', tops_path %>

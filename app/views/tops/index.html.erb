@@ -1,29 +1,32 @@
-<h1>Listing tops</h1>
-
-<table>
+<%- model_class = Top -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Top %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Top1</th>
-      <th>Desc1</th>
-      <th>Top2</th>
-      <th>Desc2</th>
-      <th>Top3</th>
-      <th>Desc3</th>
-      <th>Top4</th>
-      <th>Desc4</th>
-      <th>Top5</th>
-      <th>Desc5</th>
-      <th>Ispublic</th>
-      <th>Iscategory</th>
-      <th>User</th>
-      <th>Sources</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:top1) %></th>
+      <th><%= model_class.human_attribute_name(:desc1) %></th>
+      <th><%= model_class.human_attribute_name(:top2) %></th>
+      <th><%= model_class.human_attribute_name(:desc2) %></th>
+      <th><%= model_class.human_attribute_name(:top3) %></th>
+      <th><%= model_class.human_attribute_name(:desc3) %></th>
+      <th><%= model_class.human_attribute_name(:top4) %></th>
+      <th><%= model_class.human_attribute_name(:desc4) %></th>
+      <th><%= model_class.human_attribute_name(:top5) %></th>
+      <th><%= model_class.human_attribute_name(:desc5) %></th>
+      <th><%= model_class.human_attribute_name(:ispublic) %></th>
+      <th><%= model_class.human_attribute_name(:iscategory) %></th>
+      <th><%= model_class.human_attribute_name(:sources) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tops.each do |top| %>
       <tr>
+        <td><%= top.id %></td>
         <td><%= top.top1 %></td>
         <td><%= top.desc1 %></td>
         <td><%= top.top2 %></td>
@@ -36,16 +39,22 @@
         <td><%= top.desc5 %></td>
         <td><%= top.ispublic %></td>
         <td><%= top.iscategory %></td>
-        <td><%= top.user %></td>
         <td><%= top.sources %></td>
-        <td><%= link_to 'Show', top %></td>
-        <td><%= link_to 'Edit', edit_top_path(top) %></td>
-        <td><%= link_to 'Destroy', top, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l top.created_at, format: :long %></td>
+        <td>
+          <%= link_to top_path(top), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to top_path(top), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Top', new_top_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_top_path,
+            :class => 'btn btn-primary' %>
