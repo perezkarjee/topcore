@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  top1: MyString
+  desc1: MyText
+  top2: MyString
+  desc2: MyText
+  top3: MyString
+  desc3: MyText
+  top4: MyString
+  desc4: MyText
+  top5: MyString
+  desc5: MyText
+  ispublic: false
+  iscategory: MyString
+  user_id: 
+  sources: MyText
+
+two:
+  top1: MyString
+  desc1: MyText
+  top2: MyString
+  desc2: MyText
+  top3: MyString
+  desc3: MyText
+  top4: MyString
+  desc4: MyText
+  top5: MyString
+  desc5: MyText
+  ispublic: false
+  iscategory: MyString
+  user_id: 
+  sources: MyText
