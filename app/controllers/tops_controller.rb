@@ -29,6 +29,7 @@ class TopsController < ApplicationController
   # POST /tops.json
   def create
     @top = Top.new(top_params)
+    @top.user = current_user
 
     respond_to do |format|
       if @top.save
